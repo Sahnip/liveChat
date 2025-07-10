@@ -18,7 +18,7 @@ const Login = () => {
               <span className='text-base label-text text-gray-500'>Username</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-400 bg-opacity-5">
+            <label className="input validator rounded-lg border-y-gray-200 bg-opacity-5">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -54,7 +54,7 @@ const Login = () => {
               <span className='text-base label-text'>Password</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-400">
+            <label className="input validator rounded-lg border-y-gray-200">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"

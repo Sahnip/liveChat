@@ -13,7 +13,7 @@ const Signup = () => {
         <from>
 
           <div className='max-h-26 pt-9'>
-            <input type="text" placeholder="Full name" className="input input-bordered h-10 rounded-lg" />
+            <input type="text" placeholder="Full name" className="input input-bordered h-10 rounded-lg border-y-gray-200" />
           </div>
 
           <div className='max-h-26 pt-8'>
@@ -22,7 +22,7 @@ const Signup = () => {
               <span className='text-base label-text text-gray-500'>Username</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-400 bg-opacity-5">
+            <label className="input validator rounded-lg border-y-gray-200 bg-opacity-5">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -58,7 +58,7 @@ const Signup = () => {
               <span className='text-base label-text'>Password</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-400">
+            <label className="input validator rounded-lg border-y-gray-200">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -94,7 +94,7 @@ const Signup = () => {
               <span className='text-base label-text'>Password</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-400">
+            <label className="input validator rounded-lg border-y-gray-200">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -135,7 +135,7 @@ const Signup = () => {
             <button className='btn btn-block btn-md mt-10 hover:border-gray-100'>Signup</button>
           </div>
 
-          <a href="/login" className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>
+          <a href="/login" className='text-sm no-underline hover:underline text-gray-200 hover:text-blue-600 mt-2 inline-block'>
             {"Already"} have account ?
           </a>
 
