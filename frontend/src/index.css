@@ -86,22 +86,3 @@ button:focus-visible {
 
 
 
-
-
-.avatar-online {
-  &:before {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      display: block;
-      border-radius: calc(infinity * 1px);
-      background-color: var(--color-success);
-      /* outline: 2px solid var(--color-base-100); */
-      width: 20%;
-      height: 20%;
-      top: 5%;
-      right: 4%;
-  }
-}
-
-
