@@ -17,8 +17,8 @@ const SearchInput = () => {
                 </g>
             </svg>
             <input type="search" class="grow" placeholder="Search" />
-            <kbd class="kbd kbd-sm">⌘</kbd>
-            <kbd class="kbd kbd-sm">K</kbd>
+            {/* <kbd class="kbd kbd-sm">⌘</kbd>
+            <kbd class="kbd kbd-sm">K</kbd> */}
         </label>
 
         <button type='submit' className='btn btn-circle bg-blue-500 text-white'>
