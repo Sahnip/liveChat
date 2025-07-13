@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 
 const Login = () => {
   return (
     <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-      <div className='w-full p-12 rounded-lg shadow-md bg-gray-y-400 bg-clip-padding backdrop-filer backdrop-blur-lg bg-opacity-1 border border-gray-100'>
+      <div className='w-full p-12 rounded-lg shadow-md bg-gray-y-400 bg-clip-padding backdrop-filer backdrop-blur-lg bg-opacity-1 border border-gray-500'>
         <h1 className='text-3xl font-semibold text-center text-gray-100 '>
           Login
           <span className='text-blue-500'>LiveChat </span>
@@ -18,7 +20,7 @@ const Login = () => {
               <span className='text-base label-text text-gray-500'>Username</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-200 bg-opacity-5">
+            <label className="input validator rounded-lg border-y-gray-500 bg-opacity-5">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -54,7 +56,7 @@ const Login = () => {
               <span className='text-base label-text'>Password</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-200">
+            <label className="input validator rounded-lg border-y-gray-500">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -86,12 +88,12 @@ const Login = () => {
           </div>
 
           <div>
-            <button className='btn btn-block btn-md mt-10 hover:border-gray-100'>Login</button>
+            <button className='btn btn-block btn-md mt-10 hover:border-gray-500'>Login</button>
           </div>
 
-          <a href='/signup' className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>
+          <Link to='/signup' className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>
             {"Don't"} have account ?
-          </a>
+          </Link>
 
         </from>
       </div>

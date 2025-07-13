@@ -1,19 +1,47 @@
 import React from 'react'
 import GenderCheckbox from './GenderCheckbox'
+import { Link } from 'react-router-dom'
+import useSignup from '../../hooks/useSignup.js'
+
+
 
 const Signup = () => {
+
+  const [inputs, setInputs] = React.useState({
+    fullName: '',
+    username: '',
+    password: '',
+    confirmPassword: '',
+    gender: ''
+  });
+
+  const {loading, signup } = useSignup()
+
+  const handleCheckboxChange =(gender) =>{
+    setInputs({...inputs, gender})
+  }
+
+
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    await signup(inputs)
+  }
+
   return (
     <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-      <div className='w-full p-12 rounded-lg shadow-md bg-gray-y-400 bg-clip-padding backdrop-filer backdrop-blur-lg bg-opacity-1 border border-gray-100'>
+      <div className='w-full p-12 rounded-lg shadow-md bg-gray-y-400 bg-clip-padding backdrop-filer backdrop-blur-lg bg-opacity-1 border border-gray-500'>
         <h1 className='text-3xl font-semibold text-center text-gray-100 '>
           Signup
           <span className='text-blue-500'>LiveChat </span>
         </h1>
 
-        <from>
+        <form onSubmit={handleSubmit}>
 
           <div className='max-h-26 pt-9'>
-            <input type="text" placeholder="Full name" className="input input-bordered h-10 rounded-lg border-y-gray-200" />
+            <input type="text" placeholder="Full name" className="input input-bordered h-10 rounded-lg border-y-gray-500" required
+              value={inputs.fullName}
+              onChange={(e) => setInputs({...inputs, fullName: e.target.value})}
+             />
           </div>
 
           <div className='max-h-26 pt-8'>
@@ -22,7 +50,7 @@ const Signup = () => {
               <span className='text-base label-text text-gray-500'>Username</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-200 bg-opacity-5">
+            <label className="input validator rounded-lg border-y-gray-500 bg-opacity-5">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -40,9 +68,11 @@ const Signup = () => {
                 required
                 placeholder="Username"
                 pattern="[A-Za-z][A-Za-z0-9\-]*"
-                minlength="5"
-                maxlength="30"
+                minLength="5"
+                maxLength="30"
                 title="Only letters, numbers or dash"
+                value={inputs.username}
+                onChange={(e) => setInputs({...inputs, username: e.target.value})}
               />
             </label>
             <p className="validator-hint">
@@ -58,7 +88,7 @@ const Signup = () => {
               <span className='text-base label-text'>Password</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-200">
+            <label className="input validator rounded-lg border-y-gray-500">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -77,9 +107,11 @@ const Signup = () => {
                 type="password"
                 required
                 placeholder="Password"
-                minlength="8"
+                minLength="8"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+                value={inputs.password}
+                onChange={(e) => setInputs({...inputs, password: e.target.value})}
               />
             </label>
             <p className="validator-hint hidden">
@@ -94,7 +126,7 @@ const Signup = () => {
               <span className='text-base label-text'>Password</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-200">
+            <label className="input validator rounded-lg border-y-gray-500">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -113,9 +145,11 @@ const Signup = () => {
                 type="password"
                 required
                 placeholder="Confirm password"
-                minlength="8"
+                minLength="8"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+                value={inputs.confirmPassword}
+                onChange={(e) => setInputs({...inputs, confirmPassword: e.target.value})}
               />
             </label>
             <p className="validator-hint hidden">
@@ -126,21 +160,22 @@ const Signup = () => {
           </div>
 
           <div className='ml-6'>
-            <GenderCheckbox />
+            <GenderCheckbox onCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender}/>
           </div>
           
           
 
           <div>
-            <button className='btn btn-block btn-md mt-10 hover:border-gray-100'>Signup</button>
+            <button type='submit' className='btn btn-block btn-md mt-10 hover:border-gray-400'>Signup</button>
           </div>
 
-          <a href="/login" className='text-sm no-underline hover:underline text-gray-200 hover:text-blue-600 mt-2 inline-block'>
+          <Link to="/login" className='text-sm no-underline hover:underline text-gray-200 hover:text-blue-600 mt-2 inline-block'>
             {"Already"} have account ?
-          </a>
+          </Link>
 
-        </from>
+        </form>
       </div>
+
     </div>
   )
 }
@@ -167,7 +202,7 @@ export default Signup
 //           <span className='text-blue-500'>LiveChat </span>
 //         </h1>
 
-//         <from>
+//         <form>
 
 //           <div className='max-h-26 pt-9'>
 //             <input type="text" placeholder="Full name" className="input input-bordered h-10 rounded-lg" />
@@ -296,7 +331,7 @@ export default Signup
 //             {"Already"} have account ?
 //           </a>
           
-//         </from>
+//         </form>
 //       </div>
 //     </div>
 //   )
