@@ -10,7 +10,8 @@ import { connectToMongoDB } from "./db/connectToMongoDb.js"
 
 const app = express()
 
-const PORT = process.env.PORT || 3000
+const PORT = 3000
+// process.env.PORT
 
 dotenv.config()
 

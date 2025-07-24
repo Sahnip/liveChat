@@ -1,9 +1,24 @@
-import React from 'react'
+import {useState} from 'react'
 import { Link } from 'react-router-dom'
+import useLogin from '../../hooks/useLogin.js'
 
 
 
 const Login = () => {
+
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+
+
+  const {loading, login } = useLogin()
+
+
+
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    await login(username, password)
+  }
+
   return (
     <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
       <div className='w-full p-12 rounded-lg shadow-md bg-gray-y-400 bg-clip-padding backdrop-filer backdrop-blur-lg bg-opacity-1 border border-gray-500'>
@@ -12,7 +27,7 @@ const Login = () => {
           <span className='text-blue-500'>LiveChat </span>
         </h1>
 
-        <from>
+        <form onSubmit={handleSubmit}>
 
           <div className='max-h-26 pt-9'>
             
@@ -37,10 +52,12 @@ const Login = () => {
                 type="text"
                 required
                 placeholder="Username"
-                pattern="[A-Za-z][A-Za-z0-9\-]*"
-                minlength="5"
-                maxlength="30"
+                // pattern="[A-Za-z][A-Za-z0-9\-]*"
+                // minlength="5"
+                // maxlength="30"
                 title="Only letters, numbers or dash"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </label>
             <p className="validator-hint">
@@ -75,27 +92,33 @@ const Login = () => {
                 type="password"
                 required
                 placeholder="Password"
-                minlength="8"
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+                // minlength="8"
+                // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                // title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value)
+                }}
               />
             </label>
             <p className="validator-hint hidden">
-              Must be more than 8 characters, including
+              Must be more than 10 characters, including
               <br />At least one number <br />At least one lowercase letter <br />At least one uppercase letter
             </p>
 
           </div>
 
           <div>
-            <button className='btn btn-block btn-md mt-10 hover:border-gray-500'>Login</button>
+            <button className='btn btn-block btn-md mt-10 hover:border-gray-500' disabled={loading}>
+              {loading ? <span className="loading loading-spinner"></span>: "Login"}
+            </button>
           </div>
 
           <Link to='/signup' className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>
             {"Don't"} have account ?
           </Link>
 
-        </from>
+        </form>
       </div>
     </div>
   )

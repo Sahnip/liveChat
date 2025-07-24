@@ -25,7 +25,7 @@ const Signup = () => {
   const handleSubmit = async (e) =>{
     e.preventDefault();
     await signup(inputs)
-    console.log(loading)
+    console.log(inputs)
   }
 
   return (
@@ -39,7 +39,7 @@ const Signup = () => {
         <form onSubmit={handleSubmit}>
 
           <div className='max-h-26 pt-9'>
-            <input type="text" placeholder="Full name" className="input input-bordered h-10 rounded-lg border-y-gray-500" required
+            <input type="text" placeholder="Full name" className="input input-bordered h-10 rounded-lg border-y-gray-500"
               value={inputs.fullName}
               onChange={(e) => setInputs({...inputs, fullName: e.target.value})}
              />
@@ -66,7 +66,7 @@ const Signup = () => {
               </svg>
               <input
                 type="text"
-                required
+                
                 placeholder="Username"
                 pattern="[A-Za-z][A-Za-z0-9\-]*"
                 minLength="5"
@@ -106,7 +106,7 @@ const Signup = () => {
               </svg>
               <input
                 type="password"
-                required
+                
                 placeholder="Password"
                 minLength="8"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
@@ -144,7 +144,7 @@ const Signup = () => {
               </svg>
               <input
                 type="password"
-                required
+                
                 placeholder="Confirm password"
                 minLength="8"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
@@ -167,7 +167,9 @@ const Signup = () => {
           
 
           <div>
-            <button type='submit' className='btn btn-block btn-md mt-10 hover:border-gray-400'>Signup</button>
+            <button type='submit' className='btn btn-block btn-md mt-10 hover:border-gray-400' disabled={loading}>
+              {loading ? <span className="loading loading-spinner"></span>: "Sign up"}
+            </button>
           </div>
 
           <Link to="/login" className='text-sm no-underline hover:underline text-gray-200 hover:text-blue-600 mt-2 inline-block'>
@@ -230,7 +232,7 @@ export default Signup
 //               </svg>
 //               <input
 //                 type="text"
-//                 required
+//                 
 //                 placeholder="Username"
 //                 pattern="[A-Za-z][A-Za-z0-9\-]*"
 //                 minlength="5"
@@ -268,7 +270,7 @@ export default Signup
 //               </svg>
 //               <input
 //                 type="password"
-//                 required
+//                 
 //                 placeholder="Password"
 //                 minlength="8"
 //                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
@@ -304,7 +306,7 @@ export default Signup
 //               </svg>
 //               <input
 //                 type="password"
-//                 required
+//                 
 //                 placeholder="Confirm password"
 //                 minlength="8"
 //                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
