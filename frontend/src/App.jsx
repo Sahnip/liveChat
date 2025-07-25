@@ -9,7 +9,7 @@ import { useAuthContext } from './context/AuthContext.jsx'
 function App() {
 {/* h-screen  in className */}
 const { authUser } = useAuthContext()
-authUser ? console.log("le user actuel est" + authUser) : console.log("Pas de user connecté")
+authUser ? console.log(`le user actuel est '${authUser.username}'`) : console.log("Pas de user connecté")
   
   return (
     <div className='p-4 flex items-center justify-center'>

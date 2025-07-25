@@ -2,24 +2,31 @@
 import Messages from '../messages/Messages'
 import MessageInput from '../messages/MessageInput'
 import { TiMessages } from "react-icons/ti";
+import useConversation from '../../zustand/useConversation';
+import { useEffect } from 'react';
 
 
-export default function MessageContainer(/*{avatar, name}*/){
-  const noChatSelected = true;
+export default function MessageContainer(){
+  const {selectedConversation, setSelectedConversation} = useConversation()
+
+  useEffect(() => {
+
+    // cleanup function (unmounts)
+    return () => setSelectedConversation(null)
+  }, [setSelectedConversation])
+
   return (
       <div className='md:min-w-[650px] flex flex-col'>
-        {noChatSelected ? <NoChatSelected/> : (
+        {!selectedConversation ? <NoChatSelected/> : (
           <>
           {/* Header */}
             <div className='inline-flex items-center gap-2 px-4 py-2 mb-2 bg-gray-y-400 border border-gray-400 font-bold'>
-              {/* <span className=''>{avatare}</span> */}
               <div className='avatar avatar-online'>
                   <div className='w-9 rounded-full'>
                       <img src="https://avatar.iran.liara.run/public/41" alt="user avatar" />
-                      {/* <img src={avatar.img} alt="user avatar" /> */}
                   </div>
               </div>
-              <span className='label-text'>{/* {name} */} sah</span>
+              <span className='label-text text-white'>{selectedConversation.fullName}</span>
             </div>
             
   

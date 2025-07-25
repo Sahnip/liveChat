@@ -1,20 +1,23 @@
 
 
+
 const Message = () => {
+
+
   return (
     <div className='chat chat-end'>
-      <div className='chat-image avatar'>
+      {/* <div className='chat-image avatar'>
         <div className='w-10 rounded-full'>
           <img
             alt='Chat bubble component'
-            src={"https://cdn0.iconfinder.com/data/icons/communication-line-10/24/account_profile_user_contact_person_avatar_placeholder-512.png"}
+            src={conversation.profilePic}
 
           />
         </div>
-      </div>
+      </div> */}
       <div>
-        <div className={`chat-bubble text-white bg-blue-500 rounded-xl text-[13px]`}>Test maintenant</div>
-        <div className='chat-footer opacity text-xs flex gap-1 items-center'>08:26</div>
+        <div className={`flex justify-center items-end gap-3 chat-bubble text-white bg-blue-500 rounded-xl text-[15px] max-w-full`}>Test maintenant <div className='chat-footer opacity text-xs text-gray-300 text-[12px]'>08:26</div></div>
+    
       </div>
     </div>
   )
