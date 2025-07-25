@@ -9,13 +9,13 @@ import { useAuthContext } from "../context/AuthContext"
 function useLogin() {
     const [loading, setLoading] = useState(false)
 
-    const {authUser, setAuthUser} = useAuthContext()
+    const {setAuthUser} = useAuthContext()
 
 
 
     const login = async (username, password) =>{
-        // const success = handleInputErrors({username, password})
-        // if(!success) return;
+        const success = handleInputErrors(username, password)
+        if(!success) return;
     
 
     setLoading(true)
@@ -50,16 +50,11 @@ function useLogin() {
 
 export default useLogin
 
-// function handleInputErrors({username, password}){
-//     if(!username || !password){
-//         toast.error('Please fill in all fields.')
-//         return false
-//     }
+function handleInputErrors(username, password){
+    if(!username || !password){
+        toast.error('Please fill in all fields.')
+        return false
+    }
 
-//     if(username !== dataGlobal.username){
-//         toast.error('Username or password is incorrect.')
-//         return false
-//     }
-
-//     return true
-// }
+    return true
+}
