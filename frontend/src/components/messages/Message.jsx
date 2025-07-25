@@ -1,30 +1,36 @@
+import { useAuthContext } from '../../context/AuthContext'
+import useConversation from '../../zustand/useConversation'
 
 
 
-const Message = () => {
+const Message = ({ message }) => {
 
+  const { authUser } = useAuthContext()
+  const { selectedConversation } = useConversation()
+  const fromMe = message.senderId === authUser._id
+  const chatClassName = fromMe ? 'chat-end' : 'chat-start'
+  const profilPic = fromMe ? authUser.profilPic: selectedConversation?.profilPic
+  const bubbleBgColor = fromMe ? 'bg-blue-600' : ""
 
   return (
-    <div className='chat chat-end'>
-      {/* <div className='chat-image avatar'>
+    <div className={`chat ${chatClassName}`}>
+      <div className='chat-image avatar'>
         <div className='w-10 rounded-full'>
           <img
             alt='Chat bubble component'
-            src={conversation.profilePic}
-
+            src={profilPic}
           />
         </div>
-      </div> */}
+      </div>
       <div>
-        <div className={`flex justify-center items-end gap-3 chat-bubble text-white bg-blue-500 rounded-xl text-[15px] max-w-full`}>Test maintenant <div className='chat-footer opacity text-xs text-gray-300 text-[12px]'>08:26</div></div>
-    
+        <div className={`chat-bubble text-white bg-blue-500 ${bubbleBgColor} rounded-xl text-[13px]`}>{message.message}</div>
+        <div className='chat-footer opacity text-xs flex gap-1 items-center'>08:26</div>
       </div>
     </div>
   )
 }
 
 export default Message;
-
 
 
 // STERTER CODE

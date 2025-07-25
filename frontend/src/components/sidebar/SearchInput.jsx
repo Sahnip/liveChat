@@ -3,8 +3,8 @@ import React from 'react'
 const SearchInput = () => {
   return (
     <form className='flex items-center gap-2'>
-        <label class="input rounded-lg bg-[#d3d3d3] dark:bg-[#364153] dark:text-white">
-            <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <label className="input rounded-lg bg-[#d3d3d3] dark:bg-[#364153] dark:text-white">
+            <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                 stroke-linejoin="round"
                 stroke-linecap="round"
@@ -16,13 +16,13 @@ const SearchInput = () => {
                 <path d="m21 21-4.3-4.3"></path>
                 </g>
             </svg>
-            <input type="search" class="grow" placeholder="Search" />
-            {/* <kbd class="kbd kbd-sm">⌘</kbd>
-            <kbd class="kbd kbd-sm">K</kbd> */}
+            <input type="search" className="grow" placeholder="Search" />
+            {/* <kbd classclassName="kbd kbd-sm">⌘</kbd>
+            <kbd classclassName="kbd kbd-sm">K</kbd> */}
         </label>
 
         <button type='submit' className=''>
-        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                 stroke-linejoin="round"
                 stroke-linecap="round"
