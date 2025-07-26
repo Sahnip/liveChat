@@ -10,7 +10,12 @@ const Message = ({ message }) => {
   const fromMe = message.senderId === authUser._id
   const chatClassName = fromMe ? 'chat-end' : 'chat-start'
   const profilPic = fromMe ? authUser.profilPic: selectedConversation?.profilPic
-  const bubbleBgColor = fromMe ? 'bg-blue-600' : ""
+  const bubbleBgColor = fromMe ? 'bg-blue-600' : "bg-cyan-500"
+  const messageDate = new Date(message.createdAt)
+  const options = {
+    hour: '2-digit',
+    minute: '2-digit'
+  };
 
   return (
     <div className={`chat ${chatClassName}`}>
@@ -23,8 +28,7 @@ const Message = ({ message }) => {
         </div>
       </div>
       <div>
-        <div className={`chat-bubble text-white bg-blue-500 ${bubbleBgColor} rounded-xl text-[13px]`}>{message.message}</div>
-        <div className='chat-footer opacity text-xs flex gap-1 items-center'>08:26</div>
+        <div className={`chat-bubble flex justify-between items-end gap-3 text-white bg-blue-500 ${bubbleBgColor} rounded-xl text-[14px] max-w-full`}>{message.message}<div className='chat-footer opacity text-xs flex gap-1 items-center text-[11px] text-gray-200'>{messageDate.toLocaleTimeString("fr-FR", options)}</div></div>
       </div>
     </div>
   )
@@ -59,3 +63,9 @@ export default Message;
 // }
 
 // export default Message;
+
+
+
+// `${new Date('2023-08-17 22:30:02').getHours()}
+//  :${new Date('2023-08-17 22:30:02').getMinutes()}
+//  :${new Date('2023-08-17 22:30:02').getSeconds()}`

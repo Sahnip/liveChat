@@ -22,6 +22,8 @@ function useSendMessage() {
             if(data.error){
                 throw new Error(data.error)
             }
+            
+            // Mise à jour optimiste - ajouter le message immédiatement
             setMessages([...messages, data])
 
         }catch(error){
