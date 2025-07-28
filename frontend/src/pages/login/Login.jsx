@@ -35,7 +35,7 @@ const Login = () => {
               <span className='text-base label-text text-gray-500'>Username</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-500 bg-opacity-5 bg-[#d3d3d3]">
+            <label className="input validator rounded-lg border-y-gray-500 bg-opacity-5 light:bg-[#d3d3d3]">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -73,7 +73,7 @@ const Login = () => {
               <span className='text-base label-text'>Password</span>
             </label> */}
 
-            <label className="input validator rounded-lg border-y-gray-500 bg-[#d3d3d3]">
+            <label className="input validator rounded-lg border-y-gray-500 light:bg-[#d3d3d3]">
               <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                   strokeLinejoin="round"
@@ -109,7 +109,7 @@ const Login = () => {
           </div>
 
           <div>
-            <button className='btn btn-block btn-md mt-10 hover:border-gray-500' disabled={loading}>
+            <button className='btn btn-block btn-md mt-10 hover:border-gray-500 ' disabled={loading}>
               {loading ? <span className="loading loading-spinner"></span>: "Login"}
             </button>
           </div>

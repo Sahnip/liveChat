@@ -28,7 +28,7 @@ const Message = ({ message }) => {
         </div>
       </div>
       <div>
-        <div className={`chat-bubble flex justify-between items-end gap-3 text-white bg-blue-500 ${bubbleBgColor} rounded-xl text-[14px] max-w-full`}>{message.message}<div className='chat-footer opacity text-xs flex gap-1 items-center text-[11px] text-gray-200'>{messageDate.toLocaleTimeString("fr-FR", options)}</div></div>
+        <div className={`chat-bubble flex justify-between items-end gap-3 text-white bg-blue-500 ${bubbleBgColor} rounded-xl text-[14px] max-w-full`}>{message.message}<div className='chat-footer opacity text-xs flex gap-1 items-center text-[11px] text-gray-300'>{messageDate.toLocaleTimeString("fr-FR", options)}</div></div>
       </div>
     </div>
   )
