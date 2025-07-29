@@ -6,17 +6,17 @@ const Conversation = ({conversation, lastIdx}) => {
     const {selectedConversation, setSelectedConversation} = useConversation()
 
     const isSelected = selectedConversation?._id === conversation._id
-    const {onlineUsers} = useSocketContext
-    const isOnline = onlineUsers.includes(conversation._id)
+    const {onlineUsers} = useSocketContext()
+    const isOnline = onlineUsers ? onlineUsers.includes(conversation._id) : null
 
   return (
     <>
         <div className={`flex gap-4 items-center active:bg-gray-400 hover:bg-gray-400 rounded-md p-3 py-1 cursor-pointer
-            ${isSelected ? "bg-gray-400" : ""}`}
+            ${isSelected ? "bg-gray-200 dark:bg-gray-400" : ""}`}
             onClick={() => setSelectedConversation(conversation)}
         >
                 
-            <div className={`avatar ${isOnline ? "avatar-online" : "avatar-offline"}`}>
+            <div className={`avatar ${isOnline ? "avatar-online" : ""}`}>
                 <div className='w-12 rounded-full'>
                     <img src={conversation.profilePic} alt="user avatar" />
                 </div>
@@ -24,7 +24,7 @@ const Conversation = ({conversation, lastIdx}) => {
 
             <div className='flex flex-col flex-1'>
                 <div className='flex gap-4 justify-between'>
-                    <p className='font-bold text-gray-200'>{conversation.fullName}</p>
+                    <p className='font-bold text-gray-600 dark:text-gray-200'>{conversation.fullName}</p>
                     {/* <span className='text-xl'>Machiah now</span> */}
                 </div>
             </div>

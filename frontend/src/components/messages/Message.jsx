@@ -9,8 +9,9 @@ const Message = ({ message }) => {
   const { selectedConversation } = useConversation()
   const fromMe = message.senderId === authUser._id
   const chatClassName = fromMe ? 'chat-end' : 'chat-start'
-  const profilPic = fromMe ? authUser.profilPic: selectedConversation?.profilPic
-  const bubbleBgColor = fromMe ? 'bg-blue-600' : "bg-cyan-500"
+  const profilPic = fromMe ? authUser.profilePic: selectedConversation?.profilePic
+  const bubbleBgColor = fromMe ? 'bg-teal-100 dark:bg-teal-800' : "bg-gray-100 dark:bg-gray-800"
+  const textColor = fromMe ? 'text-black dark:text-white' : "text-black dark:text-white"
   const messageDate = new Date(message.createdAt)
   const options = {
     hour: '2-digit',
@@ -28,7 +29,7 @@ const Message = ({ message }) => {
         </div>
       </div>
       <div>
-        <div className={`chat-bubble flex justify-between items-end gap-3 text-white bg-blue-500 ${bubbleBgColor} rounded-xl text-[14px] max-w-full`}>{message.message}<div className='chat-footer opacity text-xs flex gap-1 items-center text-[11px] text-gray-300'>{messageDate.toLocaleTimeString("fr-FR", options)}</div></div>
+        <div className={`chat-bubble flex justify-between items-end gap-3 ${textColor} ${bubbleBgColor} rounded-xl text-[14px] max-w-full`}>{message.message}<div className='chat-footer opacity text-xs flex gap-1 items-center text-[11px] dark:text-gray-300 text-gray-500'>{messageDate.toLocaleTimeString("fr-FR", options)}</div></div>
       </div>
     </div>
   )

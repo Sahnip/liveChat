@@ -7,7 +7,7 @@
   prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
   color-scheme: light; 
 
-  --color-primary: #1A77F2;
+  --color-primary: #2DD4BF;
   --color-primary-content: #fff;
 }
 
@@ -29,14 +29,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.233)), url("/bg.png") center center/cover no-repeat fixed;
@@ -76,8 +68,13 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+  a {
+    font-weight: 500;
+    color: rgb(27, 169, 150);
+    text-decoration: inherit;
+  }
   a:hover {
-    color: #747bff;
+    color: #187f72;
   }
   button {
     background-color: #f9f9f9;
@@ -85,8 +82,17 @@ button:focus-visible {
   }
 
   input {
-    background-color: #d3d3d3;
+    /* background-color: #d3d3d3; */
     color: #090909;
+  }
+
+  body {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.233)), url("/bg-light.jpg") center center/cover no-repeat fixed;
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
   }
 }
 
@@ -95,6 +101,23 @@ button:focus-visible {
   button {
     background-color: #343434;
     color: #d6d6d6;
+  }
+
+  body {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.233)), url("/bg.png") center center/cover no-repeat fixed;
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  a {
+    font-weight: 500;
+    color: #2DD4BF;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #23a694;
   }
 
 }

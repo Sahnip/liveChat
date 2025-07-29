@@ -28,7 +28,7 @@ const SearchInput = () => {
 
   return (
     <form onSubmit={handleSubmit} className='flex items-center gap-2'>
-        <label className="input rounded-lg bg-[#d3d3d3] dark:bg-[#364153] dark:text-white">
+        <label className="input rounded-lg dark:bg-[#364153] dark:text-white">
             {/* <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g
                 stroke-linejoin="round"

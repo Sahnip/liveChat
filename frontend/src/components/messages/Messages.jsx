@@ -3,11 +3,14 @@ import Message from './Message'
 import useGetMessages from '../../hooks/useGetMessages'
 import MessageSkeleton from "../skeleton/MessageSkeleton"
 import { useEffect, useRef } from 'react'
+import useListenMessages from '../../hooks/useListenMessages'
 
 
 export default function Messages() {
-  const lastMessageRef = useRef()
   const {messages = [], loading} = useGetMessages()
+  useListenMessages()
+  const lastMessageRef = useRef()
+  
   
   useEffect(() => {
     setTimeout(() => {
@@ -15,7 +18,7 @@ export default function Messages() {
     }, 100)
   }, [messages])
 
-  console.log("Messages :", messages)
+  // console.log("Messages :", messages)
   return (
     <div className="px-4 flex-1 overflow-auto">
 

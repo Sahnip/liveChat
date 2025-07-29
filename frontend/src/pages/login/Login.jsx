@@ -23,8 +23,8 @@ const Login = () => {
     <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
       <div className='w-full p-12 rounded-lg shadow-md bg-gray-y-400 bg-clip-padding backdrop-filer backdrop-blur-lg bg-opacity-1 border border-gray-500'>
         <h1 className='text-3xl font-semibold text-center text-gray-100 '>
-          Login
-          <span className='text-blue-500'>LiveChat </span>
+          Login<br />
+          <span className='dark:text-[#2DD4BF] text-[#25bca8]'>&#x269B; LiveChat </span>
         </h1>
 
         <form onSubmit={handleSubmit}>
@@ -114,7 +114,7 @@ const Login = () => {
             </button>
           </div>
 
-          <Link to='/signup' className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>
+          <Link to='/signup' className='text-sm hover:underline text-[#2DD4BF] hover:text-[#71c5b9] mt-2 inline-block'>
             {"Don't"} have account ?
           </Link>
 
