@@ -16,6 +16,7 @@ export const SocketContextProvider = ({ children }) => {
 
     useEffect(() =>{
         if(authUser){
+            //localhost:3000
             const socket = io("https://livechat-k0g8.onrender.com",{
                 query:{
                     userId: authUser._id
