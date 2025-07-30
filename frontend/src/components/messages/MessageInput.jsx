@@ -17,7 +17,7 @@ function MessageInput() {
     <form className='px-4 my-3' onSubmit={handleSubmit}>
         <div className='w-full flex items-center justify-between gap-2'>
             <input type="text"
-                className='border text-sm rounded-full block w-full pt-2.5 pr-4.5 pb-2.5 pl-4.5 bg-gray-700 border-gray-600 text-white'
+                className='border text-sm rounded-full block w-full pt-2.5 pr-4.5 pb-2.5 pl-4.5 bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-white'
                 placeholder='Send a message'
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}

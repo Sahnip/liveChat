@@ -17,6 +17,7 @@ const Message = ({ message }) => {
     hour: '2-digit',
     minute: '2-digit'
   };
+  /* const shakeClass = message.shouldShake ? "shake" : ""*/
 
   return (
     <div className={`chat ${chatClassName}`}>
