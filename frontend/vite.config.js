@@ -10,7 +10,7 @@ export default defineConfig({
     port:8000,
     proxy:{
       "/api":{
-        target:"http://localhost:3000",
+        target:"https://livechat-k0g8.onrender.com",
       }
     }
   }
