@@ -12,8 +12,7 @@ import { app, server } from './socket/socket.js'
 
 // const app = express()
 
-const PORT = 3000
-// process.env.PORT
+const PORT = 3000 || process.env.PORT
 
 const __dirname = path.resolve()
 
